@@ -26,3 +26,7 @@ def execute_query(query, args=()):
     finally:
         conn.close()
 
+if __name__ == "__main__":
+    countries = get_countries_list()
+    for country in countries:
+        print(f"{country['Name']}: {country['Population']}")
