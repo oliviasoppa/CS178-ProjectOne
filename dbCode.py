@@ -19,7 +19,7 @@ def connect():
 def execute_query(query, args=()):
     conn = connect()
     try:
-        with conn.cursors() as cur:
+        with conn.cursor() as cur:
             cur.execute(query, args)
             rows = cur.fetchall()
         return rows
