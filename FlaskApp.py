@@ -5,6 +5,9 @@ import pymysql
 import pymysql.cursors
 from dbCode import *
 
+dynamodb = boto3.resource('dynamodb', region_name='us-east-2') 
+table = dynamodb.Table('CountryNotes')
+
 app = Flask(__name__)
 app.secret_key = 'your_secret_key' # this is an artifact for using flash displays; 
                                    # it is required, but you can leave this alone
