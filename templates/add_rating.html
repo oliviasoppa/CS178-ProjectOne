@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Rating</title>
+</head>
+<body>
+    <h2>Add a Rating for {{ country }}</h2>
+
+    <form method="POST">
+        <input type="hidden" name="country" value="{{ country }}">
+
+        <label>Username:</label><br>
+        <input type="text" name="username" required><br><br>
+
+        <label>Rating (1 to 5):</label><br>
+        <input type="number" name="rating" min="1" max="5" required><br><br>
+
+        <label>Year Visited:</label><br>
+        <input type="number" name="year" required><br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
