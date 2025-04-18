@@ -21,6 +21,7 @@ templates (html)
 - update_rating - takes in username, new rating and new yearvisited to add upsating rating to CountryNotes
 - display_rating - takes country to display ratings from CountryNotes
 - index - main homepage for website with buttons for CRUD and top 15 countries table
+
 dbCode.py
 - contains functions to be called and used within files (ex. execute query, connect)
 
