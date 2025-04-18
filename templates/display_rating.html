@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Country Detail</title>
+</head>
+<body>
+    <h2>Details for {{ country }}</h2>
+
+    {% if result %}
+        <p><strong>Username:</strong> {{ result.Username }}</p>
+        <p><strong>Rating:</strong> {{ result.Rating }}</p>
+        <p><strong>Year Visited:</strong> {{ result.YearVisited }}</p>
+    {% else %}
+        <p>No rating found for this user and country.</p>
+    {% endif %}
+</body>
+</html>

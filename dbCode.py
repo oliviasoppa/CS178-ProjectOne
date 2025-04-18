@@ -26,6 +26,18 @@ def execute_query(query, args=()):
     finally:
         conn.close()
 
+
+def get_top_cities(country_name):
+    query = """
+        SELECT City.Name, City.Population 
+        FROM City
+        JOIN Country ON City.CountryCode = Country.Code
+        WHERE Country.Name = %s
+        ORDER BY City.Population DESC
+        LIMIT 5
+    """
+    return execute_query(query, (country_name,))
+
 if __name__ == "__main__":
     countries = get_countries_list()
     for country in countries:
