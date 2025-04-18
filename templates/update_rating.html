@@ -1,13 +1,24 @@
 <!DOCTYPE html>
 <html>
-<head><title>Update Population</title></head>
+<head>
+    <title>Update Rating</title>
+</head>
 <body>
-<h2>Update Population for {{ country }}</h2>
-<form method="POST">
-  <input type="hidden" name="country" value="{{ country }}">
-  <label>New Population:</label><br>
-  <input type="number" name="population" required><br><br>
-  <button type="submit">Update</button>
-</form>
+    <h2>Update Rating for {{ country }}</h2>
+
+    <form method="POST">
+        <input type="hidden" name="country" value="{{ country }}">
+
+        <label>Username:</label><br>
+        <input type="text" name="username" required><br><br>
+
+        <label>New Rating (1–5):</label><br>
+        <input type="number" name="rating" min="1" max="5" required><br><br>
+
+        <label>New Year Visited:</label><br>
+        <input type="number" name="year" required><br><br>
+
+        <button type="submit">Update</button>
+    </form>
 </body>
 </html>
