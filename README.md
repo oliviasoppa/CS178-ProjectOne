@@ -23,6 +23,7 @@ templates (html)
 - index - main homepage for website with buttons for CRUD and top 15 countries table
 dbCode.py
 - contains functions to be called and used within files (ex. execute query, connect)
+
 FlaskApp.py
 - contains all app routes to direct connections and impliment CRUD functions
 - try/except blocks are used to handle errors and raise exceptions 
