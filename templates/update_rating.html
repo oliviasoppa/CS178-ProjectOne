@@ -1,20 +1,13 @@
-@app.route('/update-rating', methods=['GET', 'POST'])
-def update_rating():
-    country = request.args.get('country') if request.method == 'GET' else request.form.get('country')
-
-    if request.method == 'POST':
-        username = request.form['username']
-        new_rating = int(request.form['rating'])
-        new_year = request.form['year']
-        try:
-            table.update_item(
-                Key={'Country': country, 'Username': username},
-                UpdateExpression="SET Rating = :r, YearVisited = :y",
-                ExpressionAttributeValues={':r': new_rating, ':y': new_year}
-            )
-            flash("Rating updated successfully!", "success")
-        except Exception as err:
-            flash(f"Error: {err}", "danger")
-        return redirect('/')
-    
-    return render_template('update_rating.html', country=country)
+<!DOCTYPE html>
+<html>
+<head><title>Update Population</title></head>
+<body>
+<h2>Update Population for {{ country }}</h2>
+<form method="POST">
+  <input type="hidden" name="country" value="{{ country }}">
+  <label>New Population:</label><br>
+  <input type="number" name="population" required><br><br>
+  <button type="submit">Update</button>
+</form>
+</body>
+</html>
